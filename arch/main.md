@@ -1,25 +1,17 @@
 # 入口文件
 
-Dora 扩展的入口文件为 `main.js`，扩展在启动时首先会执行这个文件，每个扩展实例执行期间该文件只会执行一次，在该文件中，通过 `module.exports` 返回的对象属性会放到全局对象(`global`)中。
+Dora 扩展的入口文件为 `main.js`，扩展在启动时首先会执行这个文件，每个扩展实例执行期间该文件只会执行一次，在该文件中 `module.exports` 返回的对象属性会放到全局对象(`global`)中，建议在入口文件中进行一些全局的初始化操作。
 
 示例：
 ``` javascript
 var _areas = null;
-Dora.mixin({
-    async getAreas() {
-        if (_areas === null) {
-            const response = await http.get(`${endpoint}/v1/Area/getList`);
-            _areas = response.data.data;
-            return _areas;
-        }
-        return _areas;
-    },
+$dora.mixin({
     created() {
         console.log(this)
     }
 })
 module.exports = {
-    endpoint: 'https://api.live.bilibili.com/room'
+    endpoint: 'https://api.exmple.com/'
 }
-Dora.searchRoute = route.folder('search', '搜索', {})
+$dora.searchRoute = route.folder('search', '搜索', {})
 ```
