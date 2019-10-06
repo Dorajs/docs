@@ -20,8 +20,8 @@ module.exports = {
 folder 的 `fetch()` 方法会有一个 `page` 的参数，表示要加载的是第几页，当为 `null` 的时候表示首次加载或者刷新。
 除了基础的成员外，folder 组件的实例还有如下成员：
  - `style: string` 列表风格样式，有如下值可供选择：
-  - top_bar
-  - bottom_bar
+  - top_tab
+  - bottom_tab
   - drawer
   - simple
   - live
