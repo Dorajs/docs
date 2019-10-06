@@ -14,13 +14,15 @@ module.exports = {
 }
 ```
 组件实例化后会拥有以下基础成员：
+- `id: string` 资源标识
 - `title: string` 标题
 - `subtitle: string?` 子标题
+- `link: string?` 资源的原网页 URL
+- `thumb: string?` 缩略图地址
 - `args: object readonly`: 当前路由的参数，只读
 - `const type: string` 组件的类型，具体支持的类型列表下面会详细列出，__无法动态修改__
 - `menus: []?`: 菜单列表，每个组件可以指定菜单
-- `data: any` 组件的数据，不同类型的组件会有不同的数据格式要求，如果需要初始化完成之后修改组件数据，可以对这个属性进行赋值。
-- `fetch(): any` 组件初始化时会执行这个方法来获得组件的数据
+- `fetch(): object` 组件初始化时会执行这个方法来获得组件的数据
 - `refresh()` 刷新页面（重新加载数据）
 
 ## `type`
@@ -41,9 +43,24 @@ Dora 支持以下类型的组件：
  - __compose__: 编辑器组件 **❌暂未完善**
 
 
-## `fetch(): any`
+## `fetch(): object`
 
-每个组件都需要数据用来展示，组件的数据就是通过 `fetch()` 方法来获取的，Dora 允许你使用不同的方式来返回数据：
+Dora 扩展的组件是通过 `fetch()` 方法来初始化页面数据的，它返回一个 object，之后 Dora 会把这个 object 的属性值赋值给组件的相应成员属性。
+
+```javascript
+module.exports = {
+    async fetch() {
+        return {
+            title: '', // 等同于 this.title = ''
+            subtitle: '', // 等同于 this.subtitle = ''
+            menus: [], // 等同于 this.menus = []
+            // ...
+        }
+    }
+}
+```
+
+Dora 允许你使用不同的方式来返回数据：
  - 直接返回数据，适合一些静态数据
 
 ```javascript
@@ -61,24 +78,14 @@ module.exports = {
 ```javascript
 module.exports = {
     fetch () {
-        return $http.get(`https://my-api/posts/${this.args.id}`)
+        return $http.get(`https://api.example.com/posts/${this.args.id}`)
         .then((res) => {
             return { url: res.data.url }
         })
     }
 }
 ```
- - 向 `this.data`赋值
-```javascript
-module.exports = {
-    fetch () {
-        $http.get(`https://my-api/posts/${this.args.id}`)
-        .then((res) => {
-            this.data = { url: res.data.url }
-        })
-    }
-}
-```
+
  - (推荐)使用 `await/async` ([学习一下](https://javascript.info/async-await))
 ```javascript
 module.exports = {
@@ -88,3 +95,5 @@ module.exports = {
     }
 }
 ```
+> [!TIP]
+> 组件的成员属性值会自动从点击时的列表元素数据继承下来

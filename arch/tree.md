@@ -7,7 +7,7 @@ Dora 的扩展包是以 `.dora` 为后缀，本质上只是一个 zip 打包压�
 ├── components/
     ├── index.js
 ├── prefs.json
-├── icon.png
+├── icon.xxx
 ├── main.js
 └── package.json
 ```
@@ -22,13 +22,13 @@ Dora 的扩展包是以 `.dora` 为后缀，本质上只是一个 zip 打包压�
 
 详细格式请见 [配置项](arch/prefs)
 
-## `icon.png`
+## `icon.xxx`
 扩展的图标，可以有不同的后缀，如 `.png`, `.jpg`, `.webp`
 
 ## `main.js`
 入口文件，启动扩展时首先会执行这个文件，可以进行一些全局初始化工作
 
-详细描述见 [入口文件](main)
+详细描述见 [入口文件](arch/main)
 
 ## `package.json`
 包含扩展的名称、版本号、作者、依赖等信息

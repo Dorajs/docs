@@ -1,6 +1,11 @@
 # folder 组件
+> 适合展示列表类的数据
 
-目录组件，适合展示列表类的数据
+除了基础的成员外，folder 组件的实例还有如下成员：
+ - `style: string` 列表风格样式
+ - `nextPage: any?` 下一页参数
+ - `page: any?` 当前页参数
+ - `items: object[]` 列表的元素数组
   
 ```javascript
 module.exports = {
@@ -17,9 +22,14 @@ module.exports = {
   }
 }
 ```
-folder 的 `fetch()` 方法会有一个 `page` 的参数，表示要加载的是第几页，当为 `null` 的时候表示首次加载或者刷新。
-除了基础的成员外，folder 组件的实例还有如下成员：
- - `style: string` 列表风格样式，有如下值可供选择：
+## 分页加载
+
+由于列表数据需要进行分页加载，folder 组件的 fetch 方法会传入一个 `page` 的参数，表示要加载的是第几页，它的值等于`this.nextPage`，当为 `null` 的时候表示首次加载或者刷新。  
+
+在加载更多时 `fetch` 返回的 `items` 会自动 append 到已有的 `items` 数组。
+
+## style 属性
+`style` 目前支持一下值：
   - top_tab
   - bottom_tab
   - drawer
@@ -28,29 +38,8 @@ folder 的 `fetch()` 方法会有一个 `page` 的参数，表示要加载的是
   - icon
   - gallery
 
-
-`data` / `fetch()` 要求的数据类型：
-
-  - `nextPage: any?` 下一页，可以是任意数据类型，这个值会传给接下来用于加载更多时 `fetch(page)` 方法，当为 null 时表示已经列表已经全部加载完成
-
-  - `items: []` 列表的元素数组，当数量为 0 时表示列表已经全部加载完成
-  
-特别地，如果不需要分页加载，可以直接使用 `[...]`
-```javascript
-module.exports = {
-  type: 'folder',
-  style: 'simple'
-  fetch(page) {
-    return [{
-        title: '推荐'
-      }, {
-        title: '分类'
-      }
-    ]
-  }
-}
-```
-items 数组元素是一个 object，要求的数据格式如下：
+## items[] 属性
+`items` 数组元素是一个 object，要求的数据格式如下：
  - `id: string?` id 标识符
  - `title: string` 资源的标题
  - `summary: string?` 资源的简单描述
