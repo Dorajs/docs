@@ -1,6 +1,6 @@
-# 组件
+# 组件 (component)
 
-每个组件文件对应的是一个原生页面，每次打开一个新页面时就会创建一个新的组件 object，不同组件实例之间独立。
+每个组件对应的是一个原生页面，每次打开一个新页面时就会创建一个新的组件。
 每个组件文件需要通过 `module.exports` 指定一个 `object`。
 举个栗子：
 ```javascript
@@ -13,80 +13,78 @@ module.exports = {
     }
 }
 ```
-- `type` 指定组件的类型，类型列表下面会列出，__无法动态修改__
-- `data` 组件的数据，不同类型的组件会有不同的数据格式要求，如果需要初始化完成之后修改组件数据，可以对这个属性进行赋值。
-- `actions`: 菜单列表，每个组件可以指定菜单
-- `fetch()` 组件初始化时会执行的方法，如果使用 `async/await`需要返回和 `data` 一致的数据结构
+组件实例化后会拥有以下基础成员：
+- `title: string` 标题
+- `subtitle: string?` 子标题
+- `args: object readonly`: 当前路由的参数，只读
+- `const type: string` 组件的类型，具体支持的类型列表下面会详细列出，__无法动态修改__
+- `menus: []?`: 菜单列表，每个组件可以指定菜单
+- `data: any` 组件的数据，不同类型的组件会有不同的数据格式要求，如果需要初始化完成之后修改组件数据，可以对这个属性进行赋值。
+- `fetch(): any` 组件初始化时会执行这个方法来获得组件的数据
+- `refresh()` 刷新页面（重新加载数据）
 
-## 类型
-我们可以通过 `type` 来指定组件的类型，指定类型后会加载相应类型的 mixin，也会有不同的原生 API 提供，默认为 `folder`
+## `type`
+我们可以通过 `type` 来指定组件的类型，指定类型后会加载相应类型的 API，扩展组件实例化对象的成员，`type` 不指定情况下为 `folder`。
 ```javascript
 module.exports = {
-    props: {
-        type: 'video'
+    type: 'video'
+}
+```
+Dora 支持以下类型的组件：
+ - __folder__: 目录组件，适合展示列表类的数据
+ - __video__: 视频播放器组件
+ - __audio__: 音频播放器组件
+ - __article__: 文章查看组件
+ - __image__: 图片查看组件
+ - __book__: 图书查看组件 **❌暂未完善**
+ - __cartoon__: 漫画查看组件 **❌暂未完善**
+ - __compose__: 编辑器组件 **❌暂未完善**
+
+
+## `fetch(): any`
+
+每个组件都需要数据用来展示，组件的数据就是通过 `fetch()` 方法来获取的，Dora 允许你使用不同的方式来返回数据：
+ - 直接返回数据，适合一些静态数据
+
+```javascript
+module.exports = {
+    style: 'bottom_tab',
+    fetch () {
+        return [{
+            title: '推荐',
+            route: $route.folder('recommend')
+        }]
     }
 }
 ```
-- folder
-  
-  `folder` 类型的数据会显示成列表，我们可以通过 `view` 指定列表的样式：
-  - top_bar
-  - bottom_bar
-  - drawer
-  - simple_list
-  - live_list
-  - icon_list
-  - gallery
-
-  folder 的 `fetch()` 方法会有一个 `page` 的参数，表示要加载的是第几页，当为 `null` 的时候表示首次加载或者刷新。
-  
-  folder 需要的数据结构如下：
-  ```javascript
-  {
-    nextPage: page + 1,
-    items: [...]
-  }
-  ```
-  `nextPage` 表示下一页，可以是一个整数或者一个 object，当为 `null` 或者未指定的时候表示页面已加载完成。
-  `items` 是一个数组，数组元素的数据结构如下：
-
-  
-- video
-  
-  video 类型所需的数据结构如下：
-  ```javascript
-  {
-      url: 'https://example.com/video.flv', // 视频流地址
-      is_live: true // 是否是直播流
-  }
-  ```
-  - `this.selectors`
-如果视频有不同的线路或者不同的清晰度，可以通过 `selectors` 来进行设置，它接受一个数组，数组元素的数据结构如下：
- ```javascript
- {
-     id: 'quiality',      // 这个 selector 的 id，可以标识不同的 selector
-     options: [
-         {
-            title: '高清', // 选项显示的标题
-            args: {       // 选项的参数
-                // ... 
-            }
-         },
-         ....
-     ]
- }
- ```
-
-  - `this.addDanmu()`
-  
-- image
-
-- article
-  
-## 生命周期
- - `beforeCreate()`
- - `created()`
- - `activated()`
- - `inactivated()`
- - `beforeDestroy()`
- - `destroyed()`
+ - 返回一个 `Promise`
+```javascript
+module.exports = {
+    fetch () {
+        return $http.get(`https://my-api/posts/${this.args.id}`)
+        .then((res) => {
+            return { url: res.data.url }
+        })
+    }
+}
+```
+ - 向 `this.data`赋值
+```javascript
+module.exports = {
+    fetch () {
+        $http.get(`https://my-api/posts/${this.args.id}`)
+        .then((res) => {
+            this.data = { url: res.data.url }
+        })
+    }
+}
+```
+ - (推荐)使用 `await/async` ([学习一下](https://javascript.info/async-await))
+```javascript
+module.exports = {
+    async fetch () {
+        let res = await $http.get(`https://my-api/posts/${this.args.id}`)
+        return { url: res.data.url }
+    }
+}
+```
