@@ -3,6 +3,7 @@
 
 除了基础的成员外，video 组件的实例还有如下成员：
  - `url` 视频播放地址
+ - `isLive` 是否是直播
  - `selectors[]` 资源选择器，如果视频有不同的线路或者不同的清晰度，可以通过 `selectors` 来进行设置
 
 ## url 属性
@@ -33,6 +34,7 @@ module.exports = {
         let resp = await $http.get('...')
         return {
             url: resp.data.url,
+            isLive: true,
             selectors: [
             {
                 title: '清晰度',

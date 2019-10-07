@@ -2,7 +2,8 @@
 
 每个组件对应的是一个原生页面，每次打开一个新页面时就会创建一个新的组件。
 每个组件文件需要通过 `module.exports` 指定一个 `object`。
-举个栗子：
+
+例如 ：
 ```javascript
 module.exports = {
     type: 'folder'
@@ -13,19 +14,30 @@ module.exports = {
     }
 }
 ```
-组件实例化后会拥有以下基础成员：
-- `id: string` 资源标识
-- `title: string` 标题
-- `subtitle: string?` 子标题
-- `link: string?` 资源的原网页 URL
-- `thumb: string?` 缩略图地址
-- `args: object readonly`: 当前路由的参数，只读
-- `const type: string` 组件的类型，具体支持的类型列表下面会详细列出，__无法动态修改__
-- `menus: []?`: 菜单列表，每个组件可以指定菜单
-- `fetch(): object` 组件初始化时会执行这个方法来获得组件的数据
-- `refresh()` 刷新页面（重新加载数据）
+所有组件实例都有以下成员，不同组件可能会扩充其他成员：
+
+| 成员 | 类型  | 默认值 | 自动继承 | 描述 |
+| :--- | :---: | :----- |: -------|:-------|
+| type        | `const string` | `folder`    |   | 组件的类型 ([详情](../component/index?id=type))，组件初始化后就不能再修改 |
+| id        | `string` | `null`    | ✔️  | 标识 ID，用于区分资源 |
+| title     | `string` | `null`    | ✔️  | 主标题 |
+| subtitle  | `string` | `null`    |     | 子标题 |
+| summary   | `string` | `null`    | ✔️  | 概要描述 |
+| link      | `string`    | `null`    | ✔️  | 原网页 URL 地址，如果有值，页面会有一个“原网页”菜单项，点击打开原网页 |
+| image     | `string/Image`  | `null` | ✔️  | 可以是缩略图或者图标等，接受一个 URL 地址或者 [Image](../api/struct?id=image) 对象|
+| author    | `Author` | `null`    | ✔️  | 作者信息 ([详情](../api/struct?id=author)) |
+| error     | `string` | `null`    |   | 出错信息，如果出现加载错误，可自定义错误的消息，否则 Dora 会把 Error 的 message 作为错误信息展示 |
+| args      | `object` | `{}`      |      | 该组件路由的参数，由上一级目录组件传入，只读|
+| menus      | `Menu[]` | `{}`     |      | 菜单项 ([详情](../component/index?id=menus))|
+| fetch()   | 方法      |   n/a     |      | 用于初始化组件数据 ([详情](../component/index?id=fetch)) |
+| refresh() | 方法      |   n/a     |      | 刷新当前组件，重新初始化组件数据 |
+
+> [!TIP]
+> “自动继承”的意思是这些属性值可以从点击时的列表元素属性继承下来，比如你是从一个 `title` 为 'Hello World' 的列表元素点击进入这个组件的，那么这个组件的 `title` 在初始化时候就会设置为 'Hello World'，这样可以简化很多冗余代码。
 
 ## `type`
+> 组件类型
+
 我们可以通过 `type` 来指定组件的类型，指定类型后会加载相应类型的 API，扩展组件实例化对象的成员，`type` 不指定情况下为 `folder`。
 ```javascript
 module.exports = {
@@ -43,13 +55,31 @@ Dora 支持以下类型的组件：
  - __compose__: 编辑器组件 **❌暂未完善**
 
 
-## `fetch(): object`
+## `fetch(context): object`
+> 初始化组件数据
 
-Dora 扩展的组件是通过 `fetch()` 方法来初始化页面数据的，它返回一个 object，之后 Dora 会把这个 object 的属性值赋值给组件的相应成员属性。
+`fetch()` 方法接受一个 `context` 的参数，可以利用它来获取所需的一些参数，它拥有以下属性：
+ - `from: Route`: 来源的路由
+ - `route: Route`: 当前组件的路由
+ - `args: object`: `route.args` 的别名
+ - `page: any?`: 分页加载时用到的分页信息（目前只有 folder 类型的组件才会有这个值
+
+> [!TIP]
+> 为了方便我们可以利用 JavaScript 的 [解构赋值](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#%E8%A7%A3%E6%9E%84%E5%AF%B9%E8%B1%A1) 来更方便的得到所需的参数:
+> ```javascript
+> module.exports = {
+>    async fetch({ page, args }) {
+>        // ...
+>    }
+> }
+>```
+
+`fetch()` 返回一个 object，之后 Dora 会把这个 object 的属性值赋值给组件的相应成员属性。
 
 ```javascript
 module.exports = {
-    async fetch() {
+    async fetch({ args }) {
+        let resp = await $http.get(`http://api.example.com/user/${args.uid}`)
         return {
             title: '', // 等同于 this.title = ''
             subtitle: '', // 等同于 this.subtitle = ''
@@ -59,14 +89,13 @@ module.exports = {
     }
 }
 ```
-
 Dora 允许你使用不同的方式来返回数据：
  - 直接返回数据，适合一些静态数据
 
 ```javascript
 module.exports = {
     style: 'bottom_tab',
-    fetch () {
+    fetch (conetxt) {
         return [{
             title: '推荐',
             route: $route.folder('recommend')
@@ -77,7 +106,7 @@ module.exports = {
  - 返回一个 `Promise`
 ```javascript
 module.exports = {
-    fetch () {
+    fetch (conetxt) {
         return $http.get(`https://api.example.com/posts/${this.args.id}`)
         .then((res) => {
             return { url: res.data.url }
@@ -89,11 +118,9 @@ module.exports = {
  - (推荐)使用 `await/async` ([学习一下](https://javascript.info/async-await))
 ```javascript
 module.exports = {
-    async fetch () {
+    async fetch (conetxt) {
         let res = await $http.get(`https://my-api/posts/${this.args.id}`)
         return { url: res.data.url }
     }
 }
 ```
-> [!TIP]
-> 组件的成员属性值会自动从点击时的列表元素数据继承下来
