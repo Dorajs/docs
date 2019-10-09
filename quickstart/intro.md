@@ -1,4 +1,4 @@
-# 前言
+# 快速开始
 
 Dora 使用 [JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript) 作为扩展的开发语言，使用 [V8](https://v8.dev/) 作为脚本引擎，使用 [Node.js](https://nodejs.org/) 作为运行时。
 
@@ -9,7 +9,7 @@ Dora 使用 [JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript
 如果有任何问题，可通过以下方式寻求帮助：
  - Telegram: https://t.me/doraapp
  - Email: linroid@gmail.com
- - GithHub: [linroid](https://github.com/linroid)
+ - GitHub: [linroid](https://github.com/linroid)
  - Twitter: [@linroid](https://twitter.com/linroid)
  - Weibo: [你是个好人啦](https://weibo.com/ekstone)
 
