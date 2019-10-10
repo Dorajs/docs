@@ -10,7 +10,6 @@
   - [入口文件](arch/main)
   - [配置项](arch/prefs)
   - [虚拟文件系统](arch/fs)
-  - [路由](arch/route)
 
 * 组件
   - [组件基础](component/base)

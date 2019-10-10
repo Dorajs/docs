@@ -38,11 +38,11 @@ module.exports = {
 }
 ```
 Dora 支持以下类型的组件：
- - __folder__: 目录组件，适合展示列表类的数据
- - __video__: 视频播放器组件
- - __audio__: 音频播放器组件
- - __article__: 文章查看组件
- - __image__: 图片查看组件
+ - [folder](/component/folder): 目录组件，适合展示列表类的数据
+ - [video](/component/video): 视频播放器组件
+ - [audio](/component/audio): 音频播放器组件
+ - [article](/component/article): 文章查看组件
+ - [image](/component/image): 图片查看组件
  - __book__: 图书查看组件 **❌暂未完善**
  - __cartoon__: 漫画查看组件 **❌暂未完善**
  - __compose__: 编辑器组件 **❌暂未完善**
@@ -61,7 +61,7 @@ module.exports = {
     async fetch(context) {
         console.log(context.args)
         console.log(context.route)
-        console.log(context.froms)
+        console.log(context.from)
         // ...
     }
 }
@@ -172,10 +172,10 @@ Dora 使用 `id` 来作为资源的唯一标识，唯一性仅局限于当前组
 | :--- | :-----: | :----: |
 | `null` |  ✅  |  ✅ | 
 
-可以是缩略图或者图标等，接受一个 URL 地址或者 [Image](../api/struct?id=image) 对象
+可以是缩略图或者图标等，接受一个 URL 地址或者 [Image](/api/struct#image) 对象
 
 ## `author: Author?`
-> 作者信息([详情](../api/struct?id=author))
+> 作者信息([详情](/api/struct#author))
 
 | 默认值 | 自动继承 | 可动态修改 | 
 | :--- | :-----: | :----: |
@@ -227,7 +227,7 @@ Dora 使用 `id` 来作为资源的唯一标识，唯一性仅局限于当前组
 如果是首页，则 from 会为 `null`
 
 ## `menus: Menus[]?`
-> 当前页面的自定义菜单项，([详情](../component/index?id=menus)）
+> 当前页面的自定义菜单项，([详情](/component/index#menus)）
 
 | 默认值 | 自动继承 | 可动态修改 | 
 | :--- | :-----: | :----: |

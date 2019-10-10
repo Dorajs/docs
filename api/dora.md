@@ -15,7 +15,7 @@ $dora.mixin({
 
 ## defaultSearchRoute: Route
 设置默认的搜索路由，会在所有页面上方显示一个搜索按钮
-可通过 [$route](./route) 构建路由，建议在 [入口文件](../arch/tree?id=mainjs)中进行设置
+可通过 [$route](./route) 构建路由，建议在 [入口文件](/arch/tree#mainjs)中进行设置
 
 ## versionCode: number
 获取 Dora 的版本号，如：`10`

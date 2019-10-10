@@ -21,7 +21,7 @@
 
 ## `Route`
 用来描述路由信息，路由可用来不同组件之间跳转，有以下属性：
- - `type: string`: 组件的[类型](../component/index?id=type)
+ - `type: string`: 组件的[类型](/component/index#type)
  - `path: string`: 组件的路径，这个文件路径是相对于 `components/` 目录，如你的组件文件是 `components/user/profile.js`，那么 `path` 只需要填 `user/profile`
  - `args: object`: 传入的参数
 
