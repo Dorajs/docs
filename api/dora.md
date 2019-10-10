@@ -13,8 +13,8 @@ $dora.mixin({
 })
 ```
 
-## searchRoute: Route
-设置搜索的组件路由，会在所有页面上方显示一个搜索按钮  
+## defaultSearchRoute: Route
+设置默认的搜索路由，会在所有页面上方显示一个搜索按钮
 可通过 [$route](./route) 构建路由，建议在 [入口文件](../arch/tree?id=mainjs)中进行设置
 
 ## versionCode: number

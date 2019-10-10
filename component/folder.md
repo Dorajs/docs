@@ -5,7 +5,8 @@
  - `style: string` 列表风格样式
  - `nextPage: any?` 下一页参数
  - `page: any?` 当前页参数
- - `items: object[]` 列表的元素数组
+ - `items: object[]` 列表的条目数组
+ - `append(items: object[])` 方法，往列表数据中添加条目
   
 ```javascript
 module.exports = {
@@ -24,10 +25,37 @@ module.exports = {
 ```
 ## 分页加载
 
-由于列表数据需要进行分页加载，folder 组件的 fetch 方法会传入一个 `page` 的参数，表示要加载的是第几页，它的值等于`this.nextPage`，当为 `null` 的时候表示首次加载或者刷新。  
+由于列表数据需要进行分页加载，可们可以通过 fetch 方法的 `context` 参数来拿到要加载的分页参数，它的值其实等于`this.nextPage`，当为 `null` 的时候表示首次加载或者刷新。  
 
-在加载更多时 `fetch` 返回的 `items` 会自动 append 到已有的 `items` 数组。
+- 解构赋值方式拿到
+```javascript
+  module.exports = {
+      type: 'folder',
+      fetch({ page }) {
+          console.log(page)
+      }
+  }
+```
+- 对象赋值解构方式拿到
+```javascript
+  module.exports = {
+      type: 'folder',
+      fetch({ page }) {
+          console.log(page)
+      }
+  }
+```
+在加载更多时 `fetch` 返回的 `items` 会自动追加到已有的 `items` 数组，而不是直接赋值。
 
+> [!TIP]
+> 如果不需要分页加载以及初始化组件其他属性，folder 组件的 fetch 方法可以直接返回一个数组：
+> ```javascript
+> module.exports = {
+>     fetch() {
+>         return [ ... ]
+>     }
+> }
+> ```
 ## style
 `style` 目前支持一下值：
   - top_tab
@@ -39,7 +67,7 @@ module.exports = {
   - gallery
 
 ## items[]
-`items` 数组元素是一个 object，要求的数据格式如下：
+`items` 数组条目是一个 object，要求的数据格式如下：
  - `id: string?` id 标识符
  - `title: string` 资源的标题
  - `summary: string?` 资源的简单描述
@@ -53,4 +81,4 @@ module.exports = {
  - `route: Route?` 对应的路由，`onClick` 的优先级要比 `route` 高，如果 `onClick` 不为 null 则 `route` 的值会失效，更多[详情](../api/struct?id=route)
  - `link: string?` 这个资源的原网页 URL 地址，如果不为 null 会有一个 “原网页” 的菜单项
 
-数组中每个元素对象的属性除了 `title` 外都是可选的，你应该尽快能多的进行赋值，Dora 在显示的时候也是尽可能多的显示这些信息，不同 `style` 的列表元素需要的属性会有所不同，如果某个属性为 null，相应的 UI 就会隐藏。
+数组中每个条目对象的属性除了 `title` 外都是可选的，你应该尽快能多的进行赋值，Dora 在显示的时候也是尽可能多的显示这些信息，不同 `style` 的列表条目需要的属性会有所不同，如果某个属性为 null，相应的 UI 就会隐藏。

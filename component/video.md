@@ -12,7 +12,7 @@
 
 ## selectors 属性
 
-selectors 接受一个数组，数组元素的数据结构如下：
+selectors 接受一个数组，数组条目的数据结构如下：
 
 ```javascript
 {

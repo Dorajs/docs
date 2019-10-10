@@ -1,4 +1,4 @@
-# 快速开始
+# 预备知识
 
 Dora 使用 [JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript) 作为扩展的开发语言，使用 [V8](https://v8.dev/) 作为脚本引擎，使用 [Node.js](https://nodejs.org/) 作为运行时。
 

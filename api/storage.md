@@ -12,7 +12,7 @@
 获取 `key` 的值
 
 ## all(): object
-获取本地保存的所有数据，返回的是一个 key-value 对象
+获取本地保存的所有数据，返回的是一个 key-value Map
 
 ## has(key): boolean
 是否存在 `key` 的数据，返回一个布尔值
