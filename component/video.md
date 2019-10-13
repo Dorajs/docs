@@ -17,7 +17,7 @@ selectors 接受一个数组，数组条目的数据结构如下：
 ```javascript
 {
     select: 1, // number, 选中的 option 数组下标，默认为 0
-    onSelect: 'onSelectQuaility' // string, 当用户选中后，会回调组件的这个方法，会把选中的 option 作为参数传入
+    onSelect: this.onSelectQuaility // function, 当用户选中后，会回调组件的这个方法，会把选中的 option 作为参数传入
     options: [{ // [], 可供选择的项目
         title: '高清', // 选项显示的标题
         value: any // option 的值，可以是任何类型
@@ -39,7 +39,7 @@ module.exports = {
             {
                 title: '清晰度',
                 select: 0,
-                onSelect: 'onSelectQuaility',
+                onSelect: this.onSelectQuaility,
                 options: [
                     {
                         title: '高清',
