@@ -33,6 +33,5 @@
  - [通用数据结构](api/struct)
 
 * 关于
- - [灵感启发](about/inspire)
  - [常见问题](about/faq)
  - [更新日志](about/changelog)
