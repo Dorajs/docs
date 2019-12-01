@@ -2,7 +2,7 @@
 
 # Dora
 
-> Android 上的 JavaScript 扩展平台！
+> Android 上使用 JavaScript 编程的内容型扩展平台！
 
 内测阶段，文档还在持续完善中 ^_^
 <!--  -->
