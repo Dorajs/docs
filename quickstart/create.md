@@ -4,6 +4,7 @@
 不出意外的话，Dora 会自动打开编辑器。
 
 ![Create Addon](../_media/create_addon.png ':size=300')
+
 ## 使用 VSCode 插件
 
 虽然 Dora 提供了简单的编辑器，但它目前功能比较基础，开发的体验并不好，目前阶段还是建议你使用 VSCode 插件来进行开发，使用方式如下：

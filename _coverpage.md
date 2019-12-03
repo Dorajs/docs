@@ -2,9 +2,10 @@
 
 # Dora
 
-> Android 上使用 JavaScript 编程的内容型扩展平台！
+> Android 上的 <b>内容型</b> 扩展平台！
 
-内测阶段，文档还在持续完善中 ^_^
+使用 JavaScript 语言作为脚本语言，Node.js 作为运行时
+<p>内测阶段，文档还在持续完善中 ^_^</p>
 <!--  -->
 
 [文档](README)
