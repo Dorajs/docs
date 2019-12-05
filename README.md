@@ -1,5 +1,5 @@
 > [!NOTE]
-> 本文档基于 [Docsify](https://docsify.js.org) 部署在 [GitHub](https://github.com/linroid/dora-docs)，欢迎一起改进  
+> 本文档基于 [Docsify](https://docsify.js.org) 部署在 [GitHub](https://github.com/DoraKit/docs)，欢迎一起改进  
 > 由于 Dora 还在 __测试阶段__，所有 API 都有可能发生变更，请知悉
 
 ## Dora 是一个什么样的 App
@@ -24,7 +24,7 @@ Dora 使用 V8 作为脚本引擎，使用 Node.js 作为运行时，而不只�
 
 为了方便大家编写扩展，Dora 提供了一个官方的开源扩展仓库，欢迎大家一起贡献自己的作品
 
-https://github.com/linroid/dora-addons
+https://github.com/DoraKit/addons
 
 
 __一起通过 JavaScript 来为 Dora 提供强大的扩展，享受编程的乐趣！__
