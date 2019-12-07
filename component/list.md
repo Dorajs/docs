@@ -58,8 +58,12 @@ module.exports = {
 >     }
 > }
 > ```
-## style
-`style` 目前支持一下值：
+
+## items[]
+`items` 是一个数组，数组元素 object 类型，Dora.js 内置了很多列表条目的样式，每个条目要求的数据属性不一样，这里我们列出列表条目数支持的所有属性：
+ - `id: string` id 标识符
+ - `title: string` 资源的标题
+ - `style: string` 列表条目的样式，默认为 `simple` 目前支持一下值：
   - simple
   - live
   - icon
@@ -69,21 +73,46 @@ module.exports = {
   - category
   - vod
   - book
+ - `spanCount: number` 列表条目所占的网格数 [详情](#spanCount)
+ - `summary: string` 资源的简单描述
+ - `viewerCount: number` 观看数量
+ - `commentCount: number` 评论数量
+ - `voteCount: number` 评分数量
+ - `time: string|number` 资源创建的时间，可以是数值型的 Unix 时间戳或者日期字符串
+ - `image: Url` 图片，更多[详情](api/struct#image)
+ - `author: Author` 资源的作者([详情](api/struct#author))
+ - `onClick: function` 点击后回调的方法
+ - `onLongClick: function` 长按后回调的方法
+ - `route: Route` 对应的路由，`onClick` 的优先级要比 `route` 高，如果 `onClick` 不为 null 则 `route` 的值会失效，更多[详情](../api/struct?id=route)
 
-## items[]
-`items` 数组条目是一个 object，要求的数据格式如下：
- - `id: string?` id 标识符
- - `title: string` 资源的标题
- - `summary: string?` 资源的简单描述
- - `viewerCount: number?` 观看数量
- - `commentCount: number?` 评论数量
- - `voteCount: number?` 评分数量
- - `time: string?|integer?` 资源创建的时间，可以是数值型的 Unix 时间戳或者日期字符串
- - `image: string?|Image?` 图片，更多[详情](/api/struct#image)
- - `author: object?` 资源的作者
- - `onClick: function?` 点击后回调的方法
- - `onLongClick: function?` 长按后回调的方法
- - `route: Route?` 对应的路由，`onClick` 的优先级要比 `route` 高，如果 `onClick` 不为 null 则 `route` 的值会失效，更多[详情](../api/struct?id=route)
- - `link: string?` 这个资源的原网页 URL 地址，如果不为 null 会有一个 “原网页” 的菜单项
+每个属性几乎都是可选的，你应该尽快能多的进行赋值，Dora.js 在显示的时候也是尽可能多的显示这些信息，不同 `style` 的列表条目需要的属性会有所不同，如果某个属性为 null，相应的 UI 就会隐藏。
 
-数组中每个条目对象的属性除了 `title` 外都是可选的，你应该尽快能多的进行赋值，Dora.js 在显示的时候也是尽可能多的显示这些信息，不同 `style` 的列表条目需要的属性会有所不同，如果某个属性为 null，相应的 UI 就会隐藏。
+## spanCount
+ 
+ 类似于 Bootstrap，Dora.js 列表将横向空间划分为了 12 份，通过 `spanCount` 来指定一个条目占多大比例，所有样式的条目都有不同默认的值，你可以通过设置列表条目的 `spanCount` 属性来更改这个值。
+ ![spanCount](../_media/spanCount.png)
+
+## 列表条目样式
+ - simple
+
+  spanCount 默认值: 12
+
+  ![Simple style](../_media/simple_style.png)
+
+ - icon
+
+  spanCount 默认值: 4
+
+  ![icon style](../_media/icon_style.png)
+
+ - vod
+
+  spanCount 默认值: 6
+
+  ![vod style](../_media/vod_style.png)
+
+ - live
+
+  spanCount 默认值: 6
+  
+  ![live style](../_media/live_style.png)

@@ -32,7 +32,7 @@ module.exports = {
  - `from: Route|null`: 当前组件的来源路由, 如果是首页，则 from 会为 `null`
  - `title: string` 页面标题
  - `subtitle: string|null` 页面子标题
- - `actions: Action[]` 当前页面的自定义菜单项([详情](#actions))
+ - `actions: Action[]` 当前页面的自定义菜单项([详情](#actions-action))
  - `author: Author` 作者信息([详情](api/struct#author))
  - `summary: string` 概要描述
  - `thumb: Url|null` 缩略图/图标([详情](api/struct#url))
@@ -149,7 +149,9 @@ Dora.js 使用 `id` 来作为资源的唯一标识，唯一性仅局限于当前
 
 ## actions: Action[]
 
-设置后
+是一个 [Action](api/struct#action) 数组，设置后会在界面顶部显示菜单项
+
+![actions](../_media/actions.png)
 
 ## error: string|null
 
