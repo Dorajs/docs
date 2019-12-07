@@ -2,7 +2,8 @@
 
 * 快速开始
   - [前言](quickstart/intro)
-  - [创建一个扩展](quickstart/create)
+  - [文档说明](quickstart/doc)
+  - [创建一个扩展](quickstart/create_addon)
 
 * 架构
   - [Node.js 实例](arch/node)
@@ -14,7 +15,8 @@
 * 组件
   - [组件基础](component/base)
   - [生命周期](component/lifecycle)
-  - [folder 组件](component/folder)
+  - [添加一个组件](component/add_component)
+  - [list 组件](component/list)
   - [video 组件](component/video)
   - [audio 组件](component/audio)
   - [image 组件](component/image)

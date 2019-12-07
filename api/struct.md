@@ -7,17 +7,18 @@
 - `avatar:string?` 作者头像 URL 地址
 - `route: string?` 用户点击作者头像/姓名时跳转的路由
 
+## `Action`
+支持点击操作的 菜单项/按钮
+- `title: string` 标题
+- `onClick: function|null` 点击时的回调
+- `route: string?` 用户时跳转的路由
+- `icon: url|null` 图标
 
-## `Image`
-用来描述图片资源，可以是图标、本地图片、网络图片，有以下属性：
- - `url: string`: 图片地址
- - `width: number?`: 图片宽度
- - `height: number?`: 图片高度
- - `color: string`: 图片的主题色，使用 16 进制并且以 `#` 开头，如: `#FFFFFF`, `#000000`
-
-> [!TIP]
-> 由于许多时候我们图片我们只需要一个 URL，所以所有用接受 `Image` 的地方也都可以接受一个 `string` 类型的 URL 地址。
-> 另外，你可以使用 [`$icon(name[, color])`](./icon) 返回一个预设的图标地址, 使用 [`$assets(path)`](./assets) 返回一个本地图片资源地址
+## `Url`
+用于描述资源地址，可以是：
+ - 网络地址: https://example.com/icon.png
+ - Dora.js 内置的资源: `$icon(name[, color])` ([详情](api/icon))
+ - 扩展包 assets 目录的资源: `$assets(path)` ([详情](api/assets))
 
 ## `Route`
 用来描述路由信息，路由可用来不同组件之间跳转，有以下属性：

@@ -13,5 +13,3 @@ Dora.js 使用 [JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScr
  - GitHub: [linroid](https://github.com/linroid)
  - Twitter: [@linroid](https://twitter.com/linroid)
  - Weibo: [你是个好人啦](https://weibo.com/ekstone)
-
-此文档托管在 [DoraKit/docs](https://github.com/DoraKit/docs)，如果你有任何建议或疑问，欢迎到 [issues](https://github.com/DoraKit/docs/issues) 中提出来，如果你能提交 PR 来优化这个文档就更好了！
