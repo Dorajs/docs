@@ -1,6 +1,6 @@
 # 添加一个组件
 
-当你的组件创建好后，Dora.js 已经自动帮你创建了一个组件文件: `components/index.js`
+当扩展创建好后，Dora.js 已经自动创建了一个组件文件: `components/index.js`
 如果需要新增页面，就需要创建一个新的组件文件了，
 
 ## 在 Dora.js 中

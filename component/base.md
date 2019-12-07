@@ -30,11 +30,11 @@ module.exports = {
  - `const route: Route` 当前组件的路由
  - `const args: object` 当前组件的路由参数，`route.args` 的 alias (别名)，方便访问
  - `from: Route|null`: 当前组件的来源路由, 如果是首页，则 from 会为 `null`
- - `title: string` 页面标题 
- - `subtitle: string|null` 页面子标题 
+ - `title: string` 页面标题
+ - `subtitle: string|null` 页面子标题
  - `actions: Action[]` 当前页面的自定义菜单项([详情](#actions))
  - `author: Author` 作者信息([详情](api/struct#author))
- - `summary: string` 概要描述 
+ - `summary: string` 概要描述
  - `thumb: Url|null` 缩略图/图标([详情](api/struct#url))
  - `error: string` 当前遇到的错误消息([详情](#error-stringnull))
  - `searchRoute: Route|null` 搜索的路由([详情](#searchroute-route))
@@ -144,8 +144,8 @@ module.exports = {
 
 默认值：`this.route.args.toString()`
 
-Dora 使用 `id` 来作为资源的唯一标识，唯一性仅局限于当前组件内（Dora 底层会把 `this.route.path` + `this.id` 作为唯一标识）
-唯一标识可用于收藏、进度恢复等场景，Dora 默认会把 `route.args` 转化成字符串赋值给 `id`
+Dora.js 使用 `id` 来作为资源的唯一标识，唯一性仅局限于当前组件内（Dora.js 底层会把 `this.route.path` + `this.id` 作为唯一标识）
+唯一标识可用于收藏、进度恢复等场景，Dora.js 默认会把 `route.args` 转化成字符串赋值给 `id`
 
 ## actions: Action[]
 
@@ -153,7 +153,7 @@ Dora 使用 `id` 来作为资源的唯一标识，唯一性仅局限于当前组
 
 ## error: string|null
 
-如果出现加载错误，可自定义显示错误的消息，否则 Dora 会把 Error 的 message 作为错误信息展示。刷新操作会把 `error` 置为 `null`
+如果出现加载错误，可自定义显示错误的消息，否则 Dora.js 会把 Error 的 message 作为错误信息展示。刷新操作会把 `error` 置为 `null`
 
 ## searchRoute: Route?
 

@@ -29,11 +29,11 @@ Dora.js 的理念与它们本质上有非常大的区别，Dora.js 的目标是:
 
 ## 示例
 
-为了方便大家编写扩展，Dora 提供了一个官方的开源扩展仓库，欢迎大家一起贡献自己的作品
+为了方便大家编写扩展，Dora.js提供了一个官方的开源扩展仓库，欢迎大家一起贡献自己的作品
 
 https://github.com/DoraKit/addons
 
 
-__一起通过 JavaScript 来为 Dora 提供强大的扩展，享受编程的乐趣！__
+__一起通过 JavaScript 来为 Dora.js 提供强大的扩展，享受编程的乐趣！__
 
 *准备好了？[快速开始](quickstart/create)*
