@@ -1,6 +1,8 @@
 # list 组件
 > 适合展示列表类的数据
 
+![list type component](../_media/list_component.webp ':size=400')
+
 除了基础的成员外，list 组件的实例还有如下成员：
  - `nextPage: any?` 下一页参数
  - `page: any?` 当前页参数
@@ -25,22 +27,22 @@ module.exports = {
 ```
 ## 分页加载
 
-由于列表数据需要进行分页加载，可们可以通过 fetch 方法的 `context` 参数来拿到要加载的分页参数，它的值其实等于`this.nextPage`，当为 `null` 的时候表示首次加载或者刷新。  
+由于列表数据需要进行分页加载，可们可以通过 fetch 方法的 `context` 参数来拿到要加载的分页参数，它的值其实等于 `this.nextPage`，当为 `null` 的时候表示首次加载或者刷新。  
 
+- 访问 `context` 方式拿到
+```javascript
+  module.exports = {
+      type: 'list',
+      fetch(context) {
+          console.log(context.page)
+      }
+  }
+```
 - 解构赋值方式拿到
 ```javascript
   module.exports = {
       type: 'list',
-      fetch({ page }) {
-          console.log(page)
-      }
-  }
-```
-- 对象赋值解构方式拿到
-```javascript
-  module.exports = {
-      type: 'list',
-      fetch({ page }) {
+      fetch({ args, page }) {
           console.log(page)
       }
   }
@@ -58,13 +60,15 @@ module.exports = {
 > ```
 ## style
 `style` 目前支持一下值：
-  - top_tab
-  - bottom_tab
-  - drawer
   - simple
   - live
   - icon
   - gallery
+  - article
+  - richMedia
+  - category
+  - vod
+  - book
 
 ## items[]
 `items` 数组条目是一个 object，要求的数据格式如下：
