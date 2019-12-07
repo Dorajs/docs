@@ -8,7 +8,7 @@ module.exports = {
     }
 }
 ```
-Dora 的组件拥有以下生命周期钩子函数：
+Dora.js 的组件拥有以下生命周期钩子函数：
 
  - `beforeCreate()` 组件获取数据之前，在 `fetch()` 方法执行之前
  - `created()` 组件已获取数据，在 `fetch()` 方法执行完成之后

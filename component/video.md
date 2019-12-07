@@ -7,7 +7,7 @@
  - `selectors[]` 资源选择器，如果视频有不同的线路或者不同的清晰度，可以通过 `selectors` 来进行设置
 
 ## url 属性
-目前 Dora 支持以下视频类型：  
+目前 Dora.js 支持以下视频类型：  
 // TODO
 
 ## selectors 属性

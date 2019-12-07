@@ -26,4 +26,4 @@
  - `args: object`: 传入的参数
 
 > [!TIP]
-> Dora 提供了 [`$route`](./route) 来让你方便的创建 `Route`
+> Dora.js 提供了 [`$route`](./route) 来让你方便的创建 `Route`
