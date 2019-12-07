@@ -1,6 +1,6 @@
 ![logo](_media/icon.png)
 
-# Dora
+# Dora.js
 
 > Android 上的 <b>内容型</b> 编程平台！
 
