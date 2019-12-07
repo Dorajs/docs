@@ -1,8 +1,7 @@
-# folder 组件
+# list 组件
 > 适合展示列表类的数据
 
-除了基础的成员外，folder 组件的实例还有如下成员：
- - `style: string` 列表风格样式
+除了基础的成员外，list 组件的实例还有如下成员：
  - `nextPage: any?` 下一页参数
  - `page: any?` 当前页参数
  - `items: object[]` 列表的条目数组
@@ -10,14 +9,15 @@
   
 ```javascript
 module.exports = {
-  type: 'folder',
+  type: 'list',
   style: 'simple'
-  async fetch(page) {
+  async fetch({ args, page }) {
     let resp = await $http.get(`http://api.example.com/data?page=${page || 1}`)
     return {
       nextPage : (page || 1)  + 1,
       items : resp.data.data.map(post => {
-        title: post.title
+        title: post.title,
+        style: 'simple'
       })
     }
   }
@@ -30,7 +30,7 @@ module.exports = {
 - 解构赋值方式拿到
 ```javascript
   module.exports = {
-      type: 'folder',
+      type: 'list',
       fetch({ page }) {
           console.log(page)
       }
@@ -39,7 +39,7 @@ module.exports = {
 - 对象赋值解构方式拿到
 ```javascript
   module.exports = {
-      type: 'folder',
+      type: 'list',
       fetch({ page }) {
           console.log(page)
       }
@@ -48,7 +48,7 @@ module.exports = {
 在加载更多时 `fetch` 返回的 `items` 会自动追加到已有的 `items` 数组，而不是直接赋值。
 
 > [!TIP]
-> 如果不需要分页加载以及初始化组件其他属性，folder 组件的 fetch 方法可以直接返回一个数组：
+> 如果不需要分页加载以及初始化组件其他属性，list 组件的 fetch 方法可以直接返回一个数组：
 > ```javascript
 > module.exports = {
 >     fetch() {

@@ -51,7 +51,7 @@ module.exports = {
 }
 ```
 Dora.js 支持以下类型的组件：
- - [list](/component/folder): 目录组件，适合展示列表类的数据
+ - [list](/component/list): 目录组件，适合展示列表类的数据
  - [video](/component/video): 视频播放器组件
  - [audio](/component/audio): 音频播放器组件
  - [article](/component/article): 文章查看组件
@@ -113,7 +113,7 @@ module.exports = {
     fetch (conetxt) {
         return [{
             title: '推荐',
-            route: $route.folder('recommend')
+            route: $route('recommend')
         }]
     }
 }
