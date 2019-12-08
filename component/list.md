@@ -116,3 +116,27 @@ module.exports = {
   spanCount 默认值: 6
   
   ![live style](../_media/live_style.png)
+ 
+ - richMedia
+
+  spanCount 默认值: 12
+  
+  ![richMedia style](../_media/richMedia_style.png)
+
+  - gallery
+
+  spanCount 默认值: 12
+  
+  ![gallery style](../_media/gallery_style.png)
+  
+  - book
+
+  spanCount 默认值: 6
+  
+  ![book style](../_media/book_style.png)
+
+  - article
+
+  spanCount 默认值: 12
+  
+  ![article style](../_media/article_style.png)

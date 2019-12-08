@@ -98,7 +98,7 @@ module.exports = {
         return {
             title: '', // 等同于 this.title = ''
             subtitle: '', // 等同于 this.subtitle = ''
-            menus: [], // 等同于 this.menus = []
+            actions: [], // 等同于 this.actions = []
             // ...
         }
     }
