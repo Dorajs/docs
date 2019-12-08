@@ -17,8 +17,8 @@
 ## `Url`
 用于描述资源地址，可以是：
  - 网络地址: https://example.com/icon.png
- - Dora.js 内置的资源: `$icon(name[, color])` ([详情](api/icon))
- - 扩展包 assets 目录的资源: `$assets(path)` ([详情](api/assets))
+ - Dora.js 内置的资源: `$icon(name[, color])` ([详情](api/index))
+ - 扩展包 assets 目录的资源: `$assets(path)` ([详情](api/index))
 
 ## `Route`
 用来描述路由信息，路由可用来不同组件之间跳转，有以下属性：

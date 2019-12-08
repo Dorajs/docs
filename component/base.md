@@ -24,24 +24,26 @@ module.exports = {
 > [!TIP]
 > 下面的“自动继承”的意思是这些属性值可以从点击时的列表条目属性继承下来，比如你是从一个 `title` 为 'Hello World' 的列表条目点击进入这个组件的，那么这个组件的 `title` 在初始化时候就会设置为 'Hello World'。"n/a" 表示列表条目没有这个属性，无法继承。 -->
 
-所有组件实例都有以下成员，不同组件可能会扩充其他成员：
+所有组件都支持设置以下属性：
  - `const type: string` 组件类型([详情](#type))，常量，运行时无法修改
  - `id: string` 资源标识，用于区分不同的资源、保存进度等
- - `const route: Route` 当前组件的路由
- - `const args: object` 当前组件的路由参数，`route.args` 的 alias (别名)，方便访问
- - `from: Route|null`: 当前组件的来源路由, 如果是首页，则 from 会为 `null`
  - `title: string` 页面标题
  - `subtitle: string|null` 页面子标题
  - `actions: Action[]` 当前页面的自定义菜单项([详情](#actions-action))
  - `author: Author` 作者信息([详情](api/struct#author))
  - `summary: string` 概要描述
  - `thumb: Url|null` 缩略图/图标([详情](api/struct#url))
- - `error: string` 当前遇到的错误消息([详情](#error-stringnull))
+ - `error: string|null` 当前遇到的错误消息([详情](#error-stringnull))
  - `searchRoute: Route|null` 搜索的路由([详情](#searchroute-route))
  - `fetch(context: object): object` 获取组件数据([详情](#fetchcontext-object-object))
- - `refresh()` 刷新当前页面，重新加载组件数据
- - `finish()` 结束当前组件页面
  
+Dora.js 所有组件都提供以下接口：
+  - `const route: Route` 当前组件的路由
+  - `const args: object` 当前组件的路由参数，`route.args` 的 alias (别名)，方便访问
+  - `from: Route|null`: 当前组件的来源路由, 如果是首页，则 from 会为 `null`
+  - `refresh()` 刷新当前页面，重新加载组件数据
+  - `finish()` 结束当前组件页面
+
 ## type
 
 通过 `type` 指定组件的类型后，会加载相应类型的 API，扩充组件实例化对象的成员。
@@ -155,7 +157,7 @@ Dora.js 使用 `id` 来作为资源的唯一标识，唯一性仅局限于当前
 
 ## error: string|null
 
-如果出现加载错误，可自定义显示错误的消息，否则 Dora.js 会把 Error 的 message 作为错误信息展示。刷新操作会把 `error` 置为 `null`
+如果出现加载错误，可自定义显示错误的消息，否则 Dora.js 会把 Error 的 message 作为错误信息展示。刷新操作会把 `error` 置为 `null`，当为 `null` 时，错误提示会被清空。
 
 ## searchRoute: Route?
 

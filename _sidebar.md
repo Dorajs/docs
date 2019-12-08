@@ -14,6 +14,10 @@
   - [audio 组件](component/audio)
   - [image 组件](component/image)
   - [article 组件](component/article)
+  - [webview 组件](component/webview)
+  - [topTab 组件](component/topTab)
+  - [bottomTab 组件](component/bottomTab)
+  - [drawer 组件](component/drawer)
 
 * 架构
   - [Node.js 实例](arch/node)
@@ -29,8 +33,8 @@
  - [$ui](api/ui)
  - [$prefs](api/prefs)
  - [$storage](api/storage)
- - [$route](api/route)
- - [图标](api/icon)
+ - [$router](api/router)
+ - [$input](api/input)
  - [通用数据结构](api/struct)
 
 * 关于
