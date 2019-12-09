@@ -13,10 +13,12 @@ Dora.js 内置了许多全局(global) API 可供调用，为了避免命名冲�
 
 
 以下全局方法也可以直接使用：
-## $route(path: string, args: object): Route
+## $route(path: string|Url, args: object): Route
 > 构建组件路由 (Route) 对象
 
- - `path: string`: 组件路径，相对于 `components` 文件夹的路径，如 `components/posts/index.js` 文件的 path 应为 `posts/index`
+ - `path: string`: 组件路径
+  相对于 `components` 文件夹的路径，如 `components/posts/index.js` 文件的 path 应为 `posts/index`。
+  `path` 也可以是一个网络 url 地址，如: `$route('https://dorajs.com')`，Dora.js 会打开一个网页
  - `args: object`: 路由参数，默认 `{}`
 
 > [!TIP]
