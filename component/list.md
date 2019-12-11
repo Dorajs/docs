@@ -63,7 +63,7 @@ module.exports = {
 `items` 是一个数组，数组元素 object 类型，Dora.js 内置了很多列表条目的样式，每个条目要求的数据属性不一样，这里我们列出列表条目数支持的所有属性：
  - `id: string` id 标识符
  - `title: string` 资源的标题
- - `style: string` 列表条目的样式，默认为 `simple` 目前支持一下值：
+ - `style: string` 列表条目的样式，默认为 `simple` 目前支持以下值：
   - simple
   - live
   - icon
