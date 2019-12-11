@@ -36,5 +36,6 @@ Dora.js 的理念与它们本质上有非常大的区别，Dora.js 的目标是:
 
 https://github.com/DoraKit/samples
 
-
 __一起通过 JavaScript 来为 Dora.js 提供强大的扩展，享受编程的乐趣！__
+
+*准备好了？[快速开始](quickstart/intro)*
