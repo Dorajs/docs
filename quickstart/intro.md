@@ -8,8 +8,7 @@ Dora.js 使用 [JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScr
 
 如果有任何问题，可通过以下方式寻求帮助：
  - Issues: https://github.com/DoraKit/issues
- - Telegram: https://t.me/doraapp
- - Email: linroid@gmail.com
- - GitHub: [linroid](https://github.com/linroid)
+ - Telegram: https://t.me/dora_js
+ - Email: [linroid@gmail.com](mailto:linroid@gmail.com)
  - Twitter: [@linroid](https://twitter.com/linroid)
  - Weibo: [你是个好人啦](https://weibo.com/ekstone)
