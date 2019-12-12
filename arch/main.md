@@ -10,7 +10,6 @@ $dora.mixin({
         console.log(this)
     }
 })
-$dora.searchRoute = $route('search')
 module.exports = {
     endpoint: 'https://api.exmple.com/'
 }
