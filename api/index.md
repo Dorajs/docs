@@ -18,7 +18,7 @@ Dora.js 内置了许多全局(global) API 可供调用，为了避免命名冲�
 
  - `path: string`: 组件路径
   相对于 `components` 文件夹的路径，如 `components/posts/index.js` 文件的 path 应为 `posts/index`。
-  `path` 也可以是一个网络 url 地址，如: `$route('https://dorajs.com')`，Dora.js 会打开一个网页
+  `path` 也可以是一个 url 地址，如: `$route('https://dorajs.com')`，`$route('market://details?id=com.linroid.dora')`，Dora.js 会进行相应的跳转。
  - `args: object`: 路由参数，默认 `{}`
 
 > [!TIP]
