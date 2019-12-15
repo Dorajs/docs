@@ -3,3 +3,22 @@
 
 drawer 组件额外支持设置以下属性：
  - `items: object[]`: 抽屉菜单中的选项
+
+示例：
+
+```javascript
+module.exports = {
+  type: 'drawer',
+  fetch() {
+    return [{
+      title: '电影',
+      thumb: $icon('movie'),
+      route: $route('movies')
+    }, {
+      title: '电视剧',
+      thumb: $icon('tv'),
+      route: $route('soap')
+    }]
+  }
+}
+```

@@ -5,6 +5,18 @@
 
 video 组件额外支持设置以下属性：
  - `url: Url`: 视频播放地址
+ - `headers: object`: 设置视频网络请求时的 Http 头
+
+```javascript
+{
+  // ...
+  headers: {
+    'User-Agent': 'Dora.js/1.0.2',
+    'Cookies': '...'
+  }   
+  // ...
+}
+```
  - `selectors: object[]` 资源选择器，如果视频有不同线路、不同清晰度、不同来源，可以通过 `selectors` 来进行设置
  - `startDanmaku()`: 如果希望显示弹幕，可实现这个函数，创建弹幕拉取的相关任务
  - `stopDanmaku()`：结束接收弹幕的回调函数，在这个函数里应该释放掉弹幕拉取相关的任务

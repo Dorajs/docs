@@ -59,6 +59,9 @@ Dora.js 支持以下类型的组件：
  - [article](/component/article): 文章查看组件
  - [image](/component/image): 图片查看组件
  - [browser](/component/browser): 浏览器组件
+ - [topTab](/component/browser): 顶部 tab 布局 组件
+ - [bottomTab](/component/browser): 底部 tab 布局组件
+ - [drawer](/component/browser): 抽屉菜单布局组件
  - __book__: 图书查看组件 **❌暂未完善**
  - __cartoon__: 漫画查看组件 **❌暂未完善**
  - __compose__: 编辑器组件 **❌暂未完善**
