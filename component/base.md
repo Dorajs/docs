@@ -164,8 +164,6 @@ Dora.js 使用 `id` 来作为资源的唯一标识，唯一性仅局限于当前
 
 ## searchRoute: Route?
 
-默认值：`$dora.defaultSearchRoute`
-
 如果 `searchRoute` 不为 `null`，页面会显示一个搜索按钮
 当用户搜索时，会将输入的关键字作为 `args` 的 `keyword` 属性 传入以下参数到目标路由。
 
