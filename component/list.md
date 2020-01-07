@@ -121,7 +121,7 @@ module.exports = {
 
   spanCount 默认值: 12
   
-  ![richMedia style](../_media/richMedia_style.png)
+  ![richMedia style](../_media/richMedia_style.jpg)
 
   - gallery
 
