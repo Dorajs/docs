@@ -4,15 +4,15 @@
 ## `Author`
 用来描述资源的作者信息，有以下属性:
 - `name: string` 作者姓名
-- `avatar:string?` 作者头像 URL 地址
-- `route: string?` 用户点击作者头像/姓名时跳转的路由
+- `avatar:string|null` 作者头像 URL 地址
+- `route: string|null` 用户点击作者头像/姓名时跳转的路由
 
 ## `Action`
 支持点击操作的 菜单项/按钮
 - `title: string` 标题
 - `onClick: function|null` 点击时的回调
-- `route: string?` 用户时跳转的路由
-- `icon: url|null` 图标
+- `route: string|null` 用户时跳转的路由
+- `icon: Url|null` 图标
 
 ## `Url`
 用于描述资源地址，可以是：
