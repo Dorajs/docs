@@ -17,11 +17,11 @@ module.exports = {
   fetch() {
     return [{
       title: '电影',
-      thumb: $icon('movie'),
+      image: $icon('movie'),
       route: $route('movies')
     }, {
       title: '电视剧',
-      thumb: $icon('tv'),
+      image: $icon('tv'),
       route: $route('soap')
     }]
   }

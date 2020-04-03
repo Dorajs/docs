@@ -32,7 +32,7 @@ module.exports = {
  - `actions: Action[]` 当前页面的自定义菜单项([详情](#actions-action))
  - `author: Author` 作者信息([详情](api/struct#author))
  - `summary: string` 概要描述
- - `thumb: Url|null` 缩略图/图标([详情](api/struct#url))
+ - `image: Url|null` 缩略图/图标([详情](api/struct#url))
  - `error: string|null` 当前遇到的错误消息([详情](#error-stringnull))
  - `searchRoute: Route|null` 搜索的路由([详情](#searchroute-route))
  - `fetch(context: object): object` 获取组件数据([详情](#fetchcontext-object-object))
