@@ -1,5 +1,5 @@
 > [!NOTE]
-> 本文档基于 [Docsify](https://docsify.js.org) 部署在 [GitHub](https://github.com/DoraKit/docs)，欢迎一起改进  
+> 本文档基于 [Docsify](https://docsify.js.org) 部署在 [GitHub](https://github.com/Dorajs/docs)，欢迎一起改进  
 > 由于 Dora.js 还在 __测试阶段__ ，所有 API 都有可能发生变更，请知悉
 
 ## Dora.js 是一个什么样的 App？
@@ -34,7 +34,7 @@ Dora.js 的理念与它们本质上有非常大的区别，Dora.js 的目标是:
 
 为了方便大家编写扩展，Dora.js 提供了一个官方的开源扩展仓库，欢迎大家一起贡献自己的作品
 
-https://github.com/DoraKit/samples
+https://github.com/Dorajs/samples
 
 __一起通过 JavaScript 来为 Dora.js 提供强大的扩展，享受编程的乐趣！__
 

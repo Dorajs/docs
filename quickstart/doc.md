@@ -1,6 +1,6 @@
 # 文档说明
 
-此文档托管在 [DoraKit/docs](https://github.com/DoraKit/docs)，如果你有任何建议或疑问，欢迎到 [issues](https://github.com/DoraKit/docs/issues) 中提出来，如果你能提交 PR 来优化这个文档就更好了！
+此文档托管在 [Dorajs/docs](https://github.com/Dorajs/docs)，如果你有任何建议或疑问，欢迎到 [issues](https://github.com/Dorajs/docs/issues) 中提出来，如果你能提交 PR 来优化这个文档就更好了！
 
 ## 数据类型
 本文档中在描述数据类型时，参考 typescript 中的类型声明

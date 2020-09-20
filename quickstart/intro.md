@@ -7,7 +7,7 @@ Dora.js 使用 [JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScr
 - [ECMAScript 6 入门](https://es6.ruanyifeng.com/) - 阮一峰
 
 如果有任何问题，可通过以下方式寻求帮助：
- - Issues: https://github.com/DoraKit/issues
+ - Issues: https://github.com/Dorajs/issues
  - Telegram: https://t.me/dora_js
  - Email: [linroid@gmail.com](mailto:linroid@gmail.com)
  - Twitter: [@linroid](https://twitter.com/linroid)
