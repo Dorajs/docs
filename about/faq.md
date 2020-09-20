@@ -3,4 +3,4 @@
 
 ## Node.js 版本号
 
-`v10.15.3`, ES6 语法支持情况 可见 https://node.green
+`v14.1.0`, ES6 语法支持情况 可见 https://node.green

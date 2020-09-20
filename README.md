@@ -1,6 +1,6 @@
 > [!NOTE]
 > 本文档基于 [Docsify](https://docsify.js.org) 部署在 [GitHub](https://github.com/DoraKit/docs)，欢迎一起改进  
-> 由于 Dora.js 还在 __测试阶段__，所有 API 都有可能发生变更，请知悉
+> 由于 Dora.js 还在 __测试阶段__ ，所有 API 都有可能发生变更，请知悉
 
 ## Dora.js 是一个什么样的 App？
 
@@ -8,7 +8,7 @@ Dora.js 是 Android 上的一个内容型编程平台，提供了强大且简单
 
 简单来说，你可以把它当做一个可以安装许多扩展的 App。如果你想学习 JavaScript，它可以给你提供非常大的帮助，Dora.js 包含一个 Android 上的代码编辑器，并且还提供了 VSCode 插件支持。
 
-__Dora.js 集成了 [Node.js](https://nodejs.org/) v10.15.3，你可以使用该版本 Node.js 的所有 API。__
+__Dora.js 集成了 [Node.js](https://nodejs.org/) v14.1.0，你可以使用该版本 Node.js 的所有 API。__
 
 ## 与 JSBox、Auto.js 等有什么区别？
 
