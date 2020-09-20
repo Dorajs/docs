@@ -8,7 +8,7 @@
 - 变量: `const name: type|null`
  - `const` 表示这个变量是常量，无法修改
  - `name` 是这个变量的名称
- - `type` 表示这是一个 string 类型的变量
+ - `type` 是这个变量的类型
  - `|null` 表示这个变量不是必选，值可以为 null
 
  例子: 
