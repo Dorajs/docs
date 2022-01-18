@@ -7,3 +7,5 @@
 ```javascript
 $router.to($route('author'))
 ```
+
+请注意，`$route` 和 `$router` 容易混淆。如果想查看 `$route` 的使用说明，请查看 [这里](/api/) 的下半部分。
