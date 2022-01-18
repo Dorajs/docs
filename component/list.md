@@ -64,15 +64,15 @@ module.exports = {
  - `id: string` id 标识符
  - `title: string` 资源的标题
  - `style: string` 列表条目的样式，默认为 `simple` 目前支持以下值：
-  - simple
-  - live
-  - icon
-  - gallery
-  - article
-  - richMedia
-  - category
-  - vod
-  - book
+    - simple
+    - live
+    - icon
+    - gallery
+    - article
+    - richMedia
+    - category
+    - vod
+    - book
  - `spanCount: number` 列表条目所占的网格数 [详情](#spanCount)
  - `summary: string` 资源的简单描述
  - `viewerCount: number` 观看数量
@@ -93,6 +93,7 @@ module.exports = {
  ![spanCount](../_media/spanCount.png)
 
 ## 列表条目样式
+
  - simple
 
   spanCount 默认值: 12
@@ -140,3 +141,15 @@ module.exports = {
   spanCount 默认值: 12
   
   ![article style](../_media/article_style.png)
+
+  - dashboard
+  
+  spanCount 默认值: 6
+  
+  ![dashboard style](../_media/dashboard_style.png)
+  
+  - richContent
+  
+  spanCount 默认值: 12
+  
+  ![richContent style](../_media/richContent_style.png)
