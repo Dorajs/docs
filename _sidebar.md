@@ -2,7 +2,7 @@
 
 * 快速开始
   - [前言](quickstart/intro)
-  - [创建一个扩展](quickstart/create_addon)
+  - [创建扩展](quickstart/create_addon)
   - [文档说明](quickstart/doc)
 
 * 组件

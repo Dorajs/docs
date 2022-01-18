@@ -1,4 +1,7 @@
-# 预备知识
+# 预备知识（快速开始 1/3）
+
+> 摘要：需要 JavaScript 语言基础，如果已经有一定基础，请点击这里[进入下一节](/quickstart/create_addon)
+
 
 Dora.js 使用 [JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript) 作为扩展的开发语言，使用 [V8](https://v8.dev/) 作为脚本引擎，使用 [Node.js](https://nodejs.org/) 作为运行时。
 
