@@ -26,7 +26,6 @@
   - `$dora.isInstalled()`
   - `$dora.subscribe()`
   - `$dora.isSubscribed()`
-## 1.0.2-beta (2019.12.15)
 - 修复搜索按钮不生效的问题
 - 修复部分闪退问题
 - 修复 webview 组件 无法输入文件的问题
@@ -34,5 +33,3 @@
 - 修复很多闪退问题
 - 支持非 64 位设备
 - 默认仓库使用国内服务器地址（加速访问）
-API：
-- $route() 支持任意 schema url
