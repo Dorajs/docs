@@ -18,7 +18,8 @@ let ok = await $input.confirm({
 $ui.toast(`ok=${ok}`)
 ```
 
-## prompt(data: object): Promise<boolean>
+## text(data: object): Promise<boolean>
+
 输入文本，支持参数：
  - `title: string`: 标题
  - `hint: string|null`: 输入提示
@@ -56,4 +57,24 @@ let option = await $input.select({
   }]
 })
 $ui.toast(`Selected ${option.title}`)
+```
+
+## prompt(data: object): Promise<boolean>
+>[TIP!]本接口在最新版本已经被 $input.text() 代替，本接口文档不再更新
+
+输入文本，支持参数：
+ - `title: string`: 标题
+ - `hint: string|null`: 输入提示
+ - `value: string|null`: 默认值
+ - `okBtn: string|null`: 确定按钮的文字，默认为“确定”
+
+返回一个 `Promise<string|null>`，值为用户输入的内容，null 表示用户取消了输入
+
+```javascript
+let name = await $input.prompt({
+  title: 'Dora.js prompt',
+  hint: 'Input your name',
+  value: ''
+})
+$ui.toast(`Hello ${name}`)
 ```
