@@ -38,7 +38,7 @@ $ui.toast(`Hello ${name}`)
 
 ## number(data: object): Promise<boolean>
 
-输入数字，支持参数：
+输入数字，输入法以数字方式打开，支持参数：
  - `title: string`: 标题
  - `hint: string|null`: 输入提示
  - `value: number|null`: 默认值
@@ -53,9 +53,26 @@ let name = await $input.number({
 $ui.toast(`age:${name}`)
 ```
 
+## password(data: object): Promise<boolean>
+
+输入密码，在运行时输入法以密码的方式打开，支持参数：
+ - `title: string`: 标题
+ - `hint: string|null`: 输入提示
+ - `value: string|null`: 默认值
+ - `okBtn: string|null`: 确定按钮的文字，默认为“确定”
+
+返回一个 `Promise<string|null>`，值为用户输入的内容，null 表示用户取消了输入
+
+```javascript
+let name = await $input.number({
+  title: 'input password',
+  hint: 'password'
+})
+$ui.toast(`age:${name}`)
+```
 
 ## select(data: object): Promise<object|null>
-输入文本，支持参数：
+用于弹窗向用户提供一个选择窗口，可以实现单选和多选，输入参数：
  - `ttitleitle: string`: 标题
  - `multiple: boolean`: 是否支持多选，默认为 false
  - `options: object[]`: 选项列表，`title: string` 属性会用于显示
