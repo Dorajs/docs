@@ -1,6 +1,7 @@
 # 全局 API
 
 Dora.js 内置了许多全局(global) API 可供调用，为了避免命名冲突，这些 API 都是以 `$` 开头，你可以在直接使用无需 `require(...)`。
+（关于 `$router` 的部分接口，在本页面可以直接查看）
 
  - `$dora` 可以获得 Dora.js 应用的一些信息，以及对扩展实例进行一些配置 ([详情](api/dora))
  - `$http` 网络请求 ([详情](api/http))
@@ -9,6 +10,7 @@ Dora.js 内置了许多全局(global) API 可供调用，为了避免命名冲�
  - `$router` 路由导航 ([详情](api/router))
  - `$prefs` 读取和设置配置项 ([详情](api/prefs))
  - `$storage` key-value 的本地数据存储( [详情](api/storage))
+ - `$permission` 对于插件权限管理，目前版本（V1.8.1）仅用于本地文件存储（[请参考更新日志 V1.8.1-beta-2020427](about/changelog?id=_181-beta-2020427)）
 
 
 
