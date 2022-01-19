@@ -36,6 +36,24 @@ let name = await $input.prompt({
 $ui.toast(`Hello ${name}`)
 ```
 
+## number(data: object): Promise<boolean>
+
+输入数字，支持参数：
+ - `title: string`: 标题
+ - `hint: string|null`: 输入提示
+ - `value: number|null`: 默认值
+ - `okBtn: string|null`: 确定按钮的文字，默认为“确定”
+
+返回一个 `Promise<number|null>`，值为用户输入的内容，null 表示用户取消了输入
+```javascript
+let name = await $input.number({
+  title: 'input your age',
+  hint: 'age'
+})
+$ui.toast(`age:${name}`)
+```
+
+
 ## select(data: object): Promise<object|null>
 输入文本，支持参数：
  - `ttitleitle: string`: 标题
@@ -60,6 +78,7 @@ $ui.toast(`Selected ${option.title}`)
 ```
 
 ## prompt(data: object): Promise<boolean>
+
 >[TIP!]本接口在最新版本已经被 $input.text() 代替，本接口文档不再更新
 
 输入文本，支持参数：
