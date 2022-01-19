@@ -2,12 +2,7 @@
 
 ## 这里是没有写进文档里的更新
 
-- 全局 url 资源均支持设置 http headers
-- `package.json` 支持通过 `contributes.search` 设置用于全局搜索的组件
-- 新增以下全局函数:
-  - `$input.text()` （取代之前的 `$input.prompt()`）
-  - `$input.number()`
-  - `$input.password()`
+
 - 扩展详情页支持更新和向作者捐赠
 - 视频播放器在非全屏时可右滑关闭
 - 添加“魔法分享”来分享扩展和 npm 用户

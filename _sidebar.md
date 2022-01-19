@@ -27,15 +27,18 @@
   - [虚拟文件系统](arch/fs)
 
 * 全局 API
- - [总览](api/index)
- - [$dora](api/dora)
- - [$http](api/http)
- - [$ui](api/ui)
- - [$prefs](api/prefs)
- - [$storage](api/storage)
- - [$router](api/router)
- - [$input](api/input)
- - [通用数据结构](api/struct)
+  - [总览](api/index)
+  - [$dora](api/dora)
+  - [$http](api/http)
+  - [$ui](api/ui)
+  - [$prefs](api/prefs)
+  - [$storage](api/storage)
+  - [$router](api/router)
+  - [$input](api/input)
+  - [$icon](api/index)
+  - [$assets](api/index)
+  - [package.json](api/package_json)
+  - [通用数据结构](api/struct)
 
 * 关于
  - [常见问题](about/faq)

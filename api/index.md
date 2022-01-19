@@ -11,6 +11,8 @@ Dora.js 内置了许多全局(global) API 可供调用，为了避免命名冲�
  - `$storage` key-value 的本地数据存储 ([详情](api/storage))
  - `$icon` 用于使用内置图标作为 list 组件的图标，详情见下文
  - `$assets` 访问内置资源，详情见下文
+ - 在 `package.json` 文件中配置也有一些接口 ([详情](api/package_json))
+ - 如果您需要的是通用数据结构，可以点击 ([这里查看详情](api/struct))
 
 ## 全局方法
 
