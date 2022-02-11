@@ -64,15 +64,15 @@ module.exports = {
  - `id: string` id 标识符
  - `title: string` 资源的标题
  - `style: string` 列表条目的样式，默认为 `simple` 目前支持以下值：
-  - simple
-  - live
-  - icon
-  - gallery
-  - article
-  - richMedia
-  - category
-  - vod
-  - book
+    - simple
+    - live
+    - icon
+    - gallery
+    - article
+    - richMedia
+    - category
+    - vod
+    - book
  - `spanCount: number` 列表条目所占的网格数 [详情](#spanCount)
  - `summary: string` 资源的简单描述
  - `viewerCount: number` 观看数量
@@ -85,6 +85,9 @@ module.exports = {
  - `onLongClick: function` 长按后回调的方法
  - `route: Route` 对应的路由，`onClick` 的优先级要比 `route` 高，如果 `onClick` 不为 null 则 `route` 的值会失效，更多[详情](../api/struct?id=route)
 
+> [!TIP]
+> 可能会在很久没有维护的插件上见到 `thumb` 插件，您可以在更新日志再次看到他，这个接口在未来版本已经使用 `image` 属性代替。
+
 每个属性几乎都是可选的，你应该尽快能多的进行赋值，Dora.js 在显示的时候也是尽可能多的显示这些信息，不同 `style` 的列表条目需要的属性会有所不同，如果某个属性为 null，相应的 UI 就会隐藏。
 
 ## spanCount
@@ -93,6 +96,7 @@ module.exports = {
  ![spanCount](../_media/spanCount.png)
 
 ## 列表条目样式
+
  - simple
 
   spanCount 默认值: 12
@@ -140,3 +144,26 @@ module.exports = {
   spanCount 默认值: 12
   
   ![article style](../_media/article_style.png)
+
+  - dashboard
+  
+  spanCount 默认值: 6
+  
+  ![dashboard style](../_media/dashboard_style.png)
+  
+  - richContent
+  
+  spanCount 默认值: 12
+  
+  ![richContent style](../_media/richContent_style.png)
+  
+  - label
+  
+  spanCount 默认值: 4
+  
+  - chips
+  
+  spanCount 默认值: 12
+
+  ![label_and_chips style](../_media/label_and_chips_style.png)
+
