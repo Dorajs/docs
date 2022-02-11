@@ -8,7 +8,7 @@ Dora.js 是 Android 上的一个内容型编程平台，提供了强大且简单
 
 简单来说，你可以把它当做一个可以安装许多扩展的 App。如果你想学习 JavaScript，它可以给你提供非常大的帮助，Dora.js 包含一个 Android 上的代码编辑器，并且还提供了 VSCode 插件支持。
 
-__Dora.js 集成了 [Node.js](https://nodejs.org/) v14.1.0，你可以使用该版本 Node.js 的所有 API。__
+__Dora.js 集成了 [Node.js](https://nodejs.org/) v15.5.0，你可以使用该版本 Node.js 的所有 API。__
 
 ## 与 JSBox、Auto.js 等有什么区别？
 
