@@ -11,8 +11,8 @@
 范例：
 
 ```javascript
-module.exports={
-    async fetch({page,args}){
+module.exports = {
+    async fetch({ page, args }){
         console.log(args.keyword)
     }
 }
