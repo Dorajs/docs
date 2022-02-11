@@ -16,3 +16,6 @@
 
 ## has(key): boolean
 是否存在 `key` 的数据，返回一个布尔值
+
+## remove(key)
+删除 `key` 下面的数据
